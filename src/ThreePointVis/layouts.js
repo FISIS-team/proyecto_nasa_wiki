@@ -21,8 +21,8 @@ function spiralLayout(data) {
   let theta = 0;
   for (let i = 0; i < data.length; ++i) {
     const datum = data[i];
-    const radius = Math.max(1, Math.sqrt(i + 1) * 0.9);
-    theta += Math.asin(1 / radius) * 1;
+    const radius = Math.max(1, Math.sqrt(i + 1) * 1.3);
+    theta += Math.asin(1 / radius) * 2;
 
     datum.x = radius * Math.cos(theta);
     datum.y = radius * Math.sin(theta);
