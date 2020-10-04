@@ -117,13 +117,13 @@ const InstancedPoints = ({ data, layout, selectedPoint, onSelectPoint }) => {
       onClick={handleClick}
       onPointerDown={handlePointerDown}
     >
-      <cylinderBufferGeometry attach="geometry" args={[0.5, 0.5, 0.15, 32]}>
+      <sphereBufferGeometry attach="geometry" args={[1, 35, 35]}>
         <instancedBufferAttribute
           ref={colorAttrib}
           attachObject={['attributes', 'color']}
           args={[colorArray, 3]}
         />
-      </cylinderBufferGeometry>
+      </sphereBufferGeometry>
       <meshStandardMaterial
         attach="material"
         vertexColors={THREE.VertexColors}

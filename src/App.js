@@ -2,7 +2,7 @@ import * as React from 'react';
 import ThreePointVis from './ThreePointVis/ThreePointVis';
 import './styles.css';
 
-const data = new Array(10000).fill(0).map((d, id) => ({ id }));
+const data = new Array(1056).fill(0).map((d, id) => ({ id }));
 
 export default function App() {
   const [layout, setLayout] = React.useState('grid');
