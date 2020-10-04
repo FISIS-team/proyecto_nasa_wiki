@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as THREE from 'three';
+import { useLayout } from './layouts';
 
 // re-use for instance computations
 const scratchObject3D = new THREE.Object3D();
 
-const InstancedPoints = ({ data }) => {
+const InstancedPoints = ({ data, layout }) => {
+  useLayout({ data, layout });
   const meshRef = React.useRef();
   const numPoints = data.length;
 
@@ -13,10 +15,8 @@ const InstancedPoints = ({ data }) => {
     const mesh = meshRef.current;
 
     // set the transform matrix for each instance
-    for (let i = 0; i < numPoints; ++i) {
-      const x = (i % 30) * 2.5;
-      const y = Math.floor(i / 30) * 2.5;
-      const z = 0;
+    for (let i = 0; i < data.length; ++i) {
+      const { x, y, z } = data[i];
 
       scratchObject3D.position.set(x, y, z);
       scratchObject3D.rotation.set(0.5 * Math.PI, 0, 0); // cylinders face z direction
@@ -25,7 +25,7 @@ const InstancedPoints = ({ data }) => {
     }
 
     mesh.instanceMatrix.needsUpdate = true;
-  }, [numPoints]);
+  }, [data, layout]);
 
   return (
     <instancedMesh
@@ -33,8 +33,8 @@ const InstancedPoints = ({ data }) => {
       args={[null, null, numPoints]}
       frustumCulled={false}
     >
-       <sphereBufferGeometry attach="geometry" args={[1, 35, 35]} />
-       <meshStandardMaterial attach="material" color="#D1D2F9" />
+      <sphereBufferGeometry attach="geometry" args={[1, 35, 35]} />
+      <meshStandardMaterial attach="material" color="#D1D2F9" />
     </instancedMesh>
   );
 };
