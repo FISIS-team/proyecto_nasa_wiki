@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Canvas } from 'react-three-fiber';
-import Controls from './controls';
-import InstancedPoints from './instancedPoints';
+import Controls from './Controls';
+import InstancedPoints from './InstancedPoints';
 
-const ThreePointVis = ({ data, layout }) => {
+const ThreePointVis = ({ data, layout, selectedPoint, onSelectPoint }) => {
   return (
     <Canvas camera={{ position: [0, 0, 80], far: 15000 }}>
       <Controls />
@@ -14,7 +14,12 @@ const ThreePointVis = ({ data, layout }) => {
         groundColor="#080820"
         intensity={1.0}
       />
-      <InstancedPoints data={data} layout={layout} />
+      <InstancedPoints
+        data={data}
+        layout={layout}
+        selectedPoint={selectedPoint}
+        onSelectPoint={onSelectPoint}
+      />
     </Canvas>
   );
 };
