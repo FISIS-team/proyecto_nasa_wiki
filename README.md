@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To run this aplication
+
+Please go to the project directory, run de comand: npm install and after that run this other command: npm start
+
+Finally ¡enjoy the aplication! 😁
+
 ## Available Scripts
 
 In the project directory, you can run:
