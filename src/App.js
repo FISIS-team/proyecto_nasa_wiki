@@ -42,8 +42,8 @@ export default function App() {
       </div>
       <div className="controls">
         <p>
-        Hello, to control this wiki you only have to use the mouse, with a left click you drag the screen, with a right click the 3d image is rotated and zoom with wheel of the mouse.
-         :D
+        Hello, to control this wiki you only have to use the mouse, with a left click you drag the screen, with a right click the 3d image is rotated and zoom with wheel of the mouse
+         :D. Each sphere represents an image of the mission selected
         </p>
         <strong>Layouts</strong>{' '}
         <button
