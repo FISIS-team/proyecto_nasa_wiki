@@ -17,6 +17,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const drawerWidth = 220;
 
@@ -141,23 +142,12 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          {["Filter by: Name", "Filter by: Galactic Latitude", "Filter by: Galactic Longitude", "Filter by: Broad type", "Filter by: Class"].map((text, index) => (
             <ListItem button key={text} color="secondary"  >
               <ListItemIcon color="secondary" >
-                {index % 2 === 0 ? <InboxIcon  color="secondary" /> : <MailIcon color="secondary"  />}
+                {index % 2 === 0 ? <ArrowRightIcon  color="secondary" /> : <ArrowRightIcon color="secondary"  />}
               </ListItemIcon>
               <ListItemText primary={text} style={{ color: '#FFFFFF' }}   />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text} color="secondary"  >
-              <ListItemIcon  >
-                {index % 2 === 0 ? <InboxIcon color="secondary"   /> : <MailIcon  color="secondary"  />}
-              </ListItemIcon>
-              <ListItemText primary={text} style={{ color: '#FFFFFF' }} />
             </ListItem>
           ))}
         </List>
