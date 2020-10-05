@@ -3,6 +3,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ThreePointVis from './ThreePointVis/ThreePointVis';
 import PersistentDrawerLef from './sidebar'
 import './styles.css';
+import agileupvar from './jsonsPrueba/agileupvar.json'
 
 const data = new Array(1056).fill(0).map((d, id) => ({ id }));
 
@@ -33,7 +34,7 @@ export default function App() {
       <PersistentDrawerLef/>
       <div className="vis-container">
         <ThreePointVis
-          data={data}
+          data={agileupvar}
           layout={layout}
           selectedPoint={selectedPoint}
           onSelectPoint={setSelectedPoint}
@@ -55,7 +56,11 @@ export default function App() {
         </button>
         {selectedPoint && (
           <div className="selected-point">
-            You selected <strong>{selectedPoint.id}</strong>
+            Name: <strong>{selectedPoint.name}</strong> <br/>
+            galactic_longitude: <strong>{selectedPoint.galactic_longitude}</strong> <br/>
+            galactic_latitude: <strong>{selectedPoint.galactic_latitude}</strong> <br/>
+            class: <strong>{selectedPoint.class}</strong> <br/>
+            FITS_O: <strong>{selectedPoint.FITS_O}</strong> <br/>
           </div>
         )}
       </div>
