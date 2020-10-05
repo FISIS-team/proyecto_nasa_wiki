@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
+      duration: theme.transitions.duration.leavingScreen,
+      backgroundColor: theme.palette.primary.main,
     })
   },
   appBarShift: {
@@ -35,21 +36,26 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: drawerWidth,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
+      duration: theme.transitions.duration.enteringScreen,
+      backgroundColor: theme.palette.primary.main,
     })
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
+    backgroundColor: theme.palette.primary.main,
+    color: 'white',
   },
   hide: {
     display: "none"
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    backgroundColor: theme.palette.primary.main,
+    className:"text-white" ,
   },
   drawerHeader: {
     display: "flex",
@@ -57,7 +63,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    className:"text-white" ,
   },
   content: {
     flexGrow: 1,
@@ -101,16 +108,16 @@ export default function PersistentDrawerLeft() {
       >
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="secondary"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
-            <MenuIcon />
+            <MenuIcon color="secondary"  />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            Space Exploration Wiki
           </Typography>
         </Toolbar>
       </AppBar>
@@ -126,31 +133,31 @@ export default function PersistentDrawerLeft() {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
+              <ChevronLeftIcon color="secondary"  />
             ) : (
-              <ChevronRightIcon />
+              <ChevronRightIcon color="secondary"   />
             )}
           </IconButton>
         </div>
         <Divider />
         <List>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            <ListItem button key={text} color="secondary"  >
+              <ListItemIcon color="secondary" >
+                {index % 2 === 0 ? <InboxIcon  color="secondary" /> : <MailIcon color="secondary"  />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} style={{ color: '#FFFFFF' }}   />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
           {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            <ListItem button key={text} color="secondary"  >
+              <ListItemIcon  >
+                {index % 2 === 0 ? <InboxIcon color="secondary"   /> : <MailIcon  color="secondary"  />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} style={{ color: '#FFFFFF' }} />
             </ListItem>
           ))}
         </List>

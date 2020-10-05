@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ThreePointVis from './ThreePointVis/ThreePointVis';
 import PersistentDrawerLef from './sidebar'
 import './styles.css';
@@ -9,8 +10,26 @@ export default function App() {
   const [layout, setLayout] = React.useState('grid');
   const [selectedPoint, setSelectedPoint] = React.useState(null);
 
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#101030",
+      },
+      secondary: {
+        main: "#ffffff",
+      },
+      warning: {
+        main: "#5B3367",
+      },
+      success: {
+        main: "#FAC8C8",
+      },
+    },
+  });
+
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
       <PersistentDrawerLef/>
       <div className="vis-container">
         <ThreePointVis
@@ -40,6 +59,7 @@ export default function App() {
           </div>
         )}
       </div>
+      </ThemeProvider>
     </div>
   );
 }

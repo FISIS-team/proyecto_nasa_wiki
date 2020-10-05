@@ -21,8 +21,8 @@ function updateInstancedMeshMatrices({ mesh, data }) {
   mesh.instanceMatrix.needsUpdate = true;
 }
 
-const SELECTED_COLOR = '#6f6';
-const DEFAULT_COLOR = '#fff';
+const SELECTED_COLOR = '#00f2ff';
+const DEFAULT_COLOR = '#D1D2F9';
 
 // re-use for instance computations
 const scratchColor = new THREE.Color();

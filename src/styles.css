@@ -24,14 +24,14 @@ body {
 }
 
 .controls {
-  top: 50px;
-  left: 1400px;
-  position: relative;
+  top: 85px;
+  right: 10px;
+  position:  absolute;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.9);
+  background: #171742;
   padding: 16px;
   color: #fff;
-  width: 200px;
+  width: 250px;
   border-radius: 16px;
 }
 
@@ -54,7 +54,7 @@ body {
 .controls > button.active {
   font-weight: bold;
   background-color: #333;
-  color: #ff0;
+  color: rgb(255, 255, 255);
 }
 
 .selected-point {
