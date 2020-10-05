@@ -35,6 +35,18 @@ body {
   border-radius: 16px;
 }
 
+.controls2 {
+  top: 85px;
+  right: 10px;
+  position:  absolute;
+  z-index: 1;
+  background: #171742;
+  padding: 16px;
+  color: #fff;
+  width: 250px;
+  border-radius: 16px;
+}
+
 .controls > button {
   padding: 10px;
   background: #222;
