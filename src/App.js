@@ -4,6 +4,7 @@ import ThreePointVis from './ThreePointVis/ThreePointVis';
 import PersistentDrawerLef from './sidebar'
 import './styles.css';
 import agileupvar from './jsonsPrueba/agileupvar.json'
+import { requirePropFactory } from '@material-ui/core';
 
 const data = new Array(1056).fill(0).map((d, id) => ({ id }));
 
@@ -41,10 +42,6 @@ export default function App() {
         />
       </div>
       <div className="controls">
-        <p>
-        Hello, to control this wiki you only have to use the mouse, with a left click you drag the screen, with a right click the 3d image is rotated and zoom with wheel of the mouse
-         :D. Each sphere represents an image of the mission selected
-        </p>
         <strong>Layouts</strong>{' '}
         <button
           onClick={() => setLayout('grid')}
@@ -65,6 +62,7 @@ export default function App() {
             galactic_latitude: <strong>{selectedPoint.galactic_latitude}</strong> <br/>
             class: <strong>{selectedPoint.class}</strong> <br/>
             FITS_O: <strong>{selectedPoint.FITS_O}</strong> <br/>
+            <img src={process.env.PUBLIC_URL + '/agileupvar_IMG_O/' + selectedPoint.IMG_O}  style={{ width:'80%', margin: 'auto', display: 'block',maxWidth: '100%',maxHeight: '100%', paddingTop:'20%', paddingBottom:'11%'}}/>
           </div>
         )}
       </div>
