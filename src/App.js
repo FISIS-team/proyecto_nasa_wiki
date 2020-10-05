@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ThreePointVis from './ThreePointVis/ThreePointVis';
+import PersistentDrawerLef from './sidebar'
 import './styles.css';
 
 const data = new Array(1056).fill(0).map((d, id) => ({ id }));
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <PersistentDrawerLef/>
       <div className="vis-container">
         <ThreePointVis
           data={data}
